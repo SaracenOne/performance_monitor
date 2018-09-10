@@ -76,8 +76,8 @@ var vertex_memory_used_label = null
 
 var should_show_performance_monitor = false
 
-func _process(delta):
-	if(!Engine.is_editor_hint()):
+func _process(p_delta):
+	if(p_delta > 0.0 and !Engine.is_editor_hint()):
 		fps_label.set_text("FPS: " + str(Performance.get_monitor(Performance.TIME_FPS)))
 		process_label.set_text("Process: " + str(Performance.get_monitor(Performance.TIME_PROCESS)))
 		physics_process_label.set_text("Physics Process: " + str(Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS)))
@@ -121,8 +121,6 @@ func _ready():
 	if(!Engine.is_editor_hint()):
 		if has_node("Container"):
 			get_node("Container").set_size(get_node("Container").get_minimum_size())
-	
-		var should_show_fps = false
 		
 		# Left
 		fps_label = get_node(fps_label_path)
@@ -204,6 +202,8 @@ func _ready():
 		else:
 			ProjectSettings.set_setting("debug/settings/performance/show_performance_monitor", should_show_performance_monitor)
 			
-		ProjectSettings.save()
+		var save_result = ProjectSettings.save()
+		if save_result != OK:
+			printerr("Could not save project settings!")
 			
 		show_performance_monitor(should_show_performance_monitor)
