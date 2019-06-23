@@ -3,640 +3,222 @@
 [ext_resource path="res://addons/performance_monitor/performance_monitor_gui.gd" type="Script" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
 bg_color = Color( 0, 0, 0, 0.501961 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-
-[node name="PerformanceMonitor" type="Control" index="0" groups=[
+[node name="PerformanceMonitor" type="Control" groups=[
 "performance_monitor",
 ]]
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Anchor", "Margin" ]
 __meta__ = {
-"__editor_plugin_screen__": "2D"
+"__editor_plugin_screen__": "2D",
+"_edit_use_anchors_": false
 }
-fps_label_path = NodePath("")
-process_label_path = NodePath("")
-physics_process_label_path = NodePath("")
-render_objects_in_frame_label_path = NodePath("")
-render_draw_calls_in_frame_label_path = NodePath("")
-render_verticies_in_frame_label_path = NodePath("")
-render_material_changes_in_frame_label_path = NodePath("")
-render_shader_changes_in_frame_label_path = NodePath("")
-render_surface_changes_in_frame_label_path = NodePath("")
-memory_static_label_path = NodePath("")
-memory_dynamic_label_path = NodePath("")
-object_count_label_path = NodePath("")
-object_resource_count_label_path = NodePath("")
-object_node_count_label_path = NodePath("")
-physics_3d_active_objects_label_path = NodePath("")
-physics_3d_collision_pairs_label_path = NodePath("")
-physics_3d_island_count_label_path = NodePath("")
-physics_2d_active_objects_label_path = NodePath("")
-physics_2d_collision_pairs_label_path = NodePath("")
-physics_2d_island_count_label_path = NodePath("")
-usage_video_memory_total_label_path = NodePath("")
-video_memory_used_label_path = NodePath("")
-texture_memory_used_label_path = NodePath("")
-vertex_memory_used_label_path = NodePath("")
+fps_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/FPSLabel")
+process_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/ProcessLabel")
+physics_process_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/PhysicsProcessLabel")
+render_objects_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderObjectsInFrameLabel")
+render_draw_calls_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderDrawCallsInFrameLabel")
+render_verticies_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderVerticiesInFrameLabel")
+render_material_changes_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderMaterialChangesInFrameLabel")
+render_shader_changes_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderShaderChangesInFrameLabel")
+render_surface_changes_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderSurfaceChangesInFrameLabel")
+memory_static_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/MemoryStaticLabel")
+memory_dynamic_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/MemoryDynamicLabel")
+object_count_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/ObjectCountLabel")
+object_resource_count_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/ObjectResourceCountLabel")
+object_node_count_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/ObjectNodeCountLabel")
+physics_3d_active_objects_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics3DActiveObjectsLabel")
+physics_3d_collision_pairs_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics3DCollisionPairsLabel")
+physics_3d_island_count_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics3DIslandCountLabel")
+physics_2d_active_objects_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics2DActiveObjectsLabel")
+physics_2d_collision_pairs_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics2DCollisionPairsLabel")
+physics_2d_island_count_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics2DIslandCountLabel")
+usage_video_memory_total_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/UsageVideoMemoryTotalLabel")
+video_memory_used_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/VideoMemoryUsedLabel")
+texture_memory_used_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/TextureMemoryUsedLabel")
+vertex_memory_used_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/VertexMemoryUsedLabel")
 
-[node name="Panel" type="Panel" parent="." index="0"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Panel" type="Panel" parent="."]
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 480.0
 margin_bottom = 278.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_styles/panel = SubResource( 1 )
-_sections_unfolded = [ "Custom Styles", "custom_styles/panel" ]
 
-[node name="Container" type="PanelContainer" parent="Panel" index="0"]
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="Container" type="PanelContainer" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
 margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
 mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_styles/panel = SubResource( 2 )
-_sections_unfolded = [ "Focus", "Margin", "Theme", "custom_styles" ]
 
-[node name="HorizontalContainer" type="HBoxContainer" parent="Panel/Container" index="0"]
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HorizontalContainer" type="HBoxContainer" parent="Panel/Container"]
 margin_right = 450.0
 margin_bottom = 248.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 custom_constants/separation = 0
-alignment = 0
-_sections_unfolded = [ "Margin", "Size Flags", "custom_constants" ]
 
-[node name="LeftContainer" type="VBoxContainer" parent="Panel/Container/HorizontalContainer" index="0"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LeftContainer" type="VBoxContainer" parent="Panel/Container/HorizontalContainer"]
 margin_right = 223.0
 margin_bottom = 248.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Size Flags", "custom_constants" ]
 
-[node name="FPSLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="0"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="FPSLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_right = 223.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Custom Colors" ]
 
-[node name="ProcessLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="1"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ProcessLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 18.0
 margin_right = 223.0
 margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Custom Colors" ]
 
-[node name="PhysicsProcessLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="2"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PhysicsProcessLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 36.0
 margin_right = 223.0
 margin_bottom = 50.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="RenderObjectsInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="3"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="RenderObjectsInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 54.0
 margin_right = 223.0
 margin_bottom = 68.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="RenderDrawCallsInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="4"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="RenderDrawCallsInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 72.0
 margin_right = 223.0
 margin_bottom = 86.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="RenderVerticiesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="5"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="RenderVerticiesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 90.0
 margin_right = 223.0
 margin_bottom = 104.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="RenderMaterialChangesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="6"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="RenderMaterialChangesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 108.0
 margin_right = 223.0
 margin_bottom = 122.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="RenderShaderChangesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="7"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="RenderShaderChangesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 126.0
 margin_right = 223.0
 margin_bottom = 140.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="RenderSurfaceChangesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="8"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="RenderSurfaceChangesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 144.0
 margin_right = 223.0
 margin_bottom = 158.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Custom Colors" ]
 
-[node name="MemoryStaticLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="9"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="MemoryStaticLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 162.0
 margin_right = 223.0
 margin_bottom = 176.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="MemoryDynamicLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="10"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="MemoryDynamicLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 180.0
 margin_right = 223.0
 margin_bottom = 194.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="ObjectCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="11"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ObjectCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 198.0
 margin_right = 223.0
 margin_bottom = 212.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="ObjectResourceCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="12"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ObjectResourceCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 216.0
 margin_right = 223.0
 margin_bottom = 230.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="ObjectNodeCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer" index="13"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ObjectNodeCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
 margin_top = 234.0
 margin_right = 223.0
 margin_bottom = 248.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="VSeparator" type="VSeparator" parent="Panel/Container/HorizontalContainer" index="1"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VSeparator" type="VSeparator" parent="Panel/Container/HorizontalContainer"]
 margin_left = 223.0
 margin_right = 227.0
 margin_bottom = 248.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Size Flags" ]
 
-[node name="RightContainer" type="VBoxContainer" parent="Panel/Container/HorizontalContainer" index="2"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="RightContainer" type="VBoxContainer" parent="Panel/Container/HorizontalContainer"]
 margin_left = 227.0
 margin_right = 450.0
 margin_bottom = 248.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Size Flags" ]
 
-[node name="Physics3DActiveObjectsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer" index="0"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Physics3DActiveObjectsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
 margin_right = 223.0
 margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Physics3DCollisionPairsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer" index="1"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Physics3DCollisionPairsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
 margin_top = 18.0
 margin_right = 223.0
 margin_bottom = 32.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Physics3DIslandCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer" index="2"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Physics3DIslandCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
 margin_top = 36.0
 margin_right = 223.0
 margin_bottom = 50.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Physics2DActiveObjectsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer" index="3"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Physics2DActiveObjectsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
 margin_top = 54.0
 margin_right = 223.0
 margin_bottom = 68.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Physics2DCollisionPairsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer" index="4"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Physics2DCollisionPairsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
 margin_top = 72.0
 margin_right = 223.0
 margin_bottom = 86.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Physics2DIslandCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer" index="5"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Physics2DIslandCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
 margin_top = 90.0
 margin_right = 223.0
 margin_bottom = 104.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="UsageVideoMemoryTotalLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer" index="6"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="UsageVideoMemoryTotalLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
 margin_top = 108.0
 margin_right = 223.0
 margin_bottom = 122.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="VideoMemoryUsedLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer" index="7"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VideoMemoryUsedLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
 margin_top = 126.0
 margin_right = 223.0
 margin_bottom = 140.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="TextureMemoryUsedLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer" index="8"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="TextureMemoryUsedLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
 margin_top = 144.0
 margin_right = 223.0
 margin_bottom = 158.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="VertexMemoryUsedLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer" index="9"]
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VertexMemoryUsedLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
 margin_top = 162.0
 margin_right = 223.0
 margin_bottom = 176.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
