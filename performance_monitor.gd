@@ -5,8 +5,9 @@ var canvas_layer = null
 
 const performance_monitor_gui_const = preload("performance_monitor_gui.tscn")
 
+
 func _ready():
-	if !Engine.is_editor_hint():
+	if ! Engine.is_editor_hint():
 		canvas_layer = CanvasLayer.new()
 		canvas_layer.set_name("PerformanceMonitorLayer")
 		canvas_layer.set_layer(128)
