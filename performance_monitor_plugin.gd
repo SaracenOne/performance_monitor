@@ -2,6 +2,16 @@ extends EditorPlugin
 tool
 
 
+func _init() -> void:
+	print("Initialising PerformanceMonitor plugin")
+
+
+func _notification(p_notification: int):
+	match p_notification:
+		NOTIFICATION_PREDELETE:
+			print("Destroying PerformanceMonitor plugin")
+
+
 func get_name() -> String:
 	return "PerformanceMonitor"
 
