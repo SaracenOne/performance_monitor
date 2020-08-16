@@ -322,8 +322,8 @@ func _ready():
 				should_show_performance_monitor
 			)
 
-		var save_result = ProjectSettings.save()
-		if save_result != OK:
-			printerr("Could not save project settings!")
+			if Engine.is_editor_hint():				var save_result = ProjectSettings.save()
+				if save_result != OK:
+					printerr("Could not save project settings!")
 
 		show_performance_monitor(should_show_performance_monitor)
