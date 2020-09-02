@@ -176,19 +176,19 @@ func _process(p_delta):
 
 		physics_2d_active_objects_label.set_text(
 			(
-				"Physics 2D Active Objects: "
+				"Physics 2D Active Objects: %s"
 				% str(Performance.get_monitor(Performance.PHYSICS_2D_ACTIVE_OBJECTS))
 			)
 		)
 		physics_2d_collision_pairs_label.set_text(
 			(
-				"Physics 2D Collision Pairs: "
+				"Physics 2D Collision Pairs: %s"
 				% str(Performance.get_monitor(Performance.PHYSICS_2D_COLLISION_PAIRS))
 			)
 		)
 		physics_2d_island_count_label.set_text(
 			(
-				"Physics 2D Island Count: "
+				"Physics 2D Island Count: %s"
 				% str(Performance.get_monitor(Performance.PHYSICS_2D_ISLAND_COUNT))
 			)
 		)

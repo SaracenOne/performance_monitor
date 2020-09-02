@@ -1,11 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://addons/performance_monitor/performance_monitor_gui.gd" type="Script" id=1]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 0.501961 )
-
-[sub_resource type="StyleBoxEmpty" id=2]
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="PerformanceMonitor" type="Control" groups=[
 "performance_monitor",
@@ -18,207 +15,177 @@ __meta__ = {
 "__editor_plugin_screen__": "2D",
 "_edit_use_anchors_": false
 }
-fps_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/FPSLabel")
-process_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/ProcessLabel")
-physics_process_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/PhysicsProcessLabel")
-render_objects_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderObjectsInFrameLabel")
-render_draw_calls_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderDrawCallsInFrameLabel")
-render_verticies_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderVerticiesInFrameLabel")
-render_material_changes_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderMaterialChangesInFrameLabel")
-render_shader_changes_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderShaderChangesInFrameLabel")
-render_surface_changes_in_frame_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/RenderSurfaceChangesInFrameLabel")
-memory_static_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/MemoryStaticLabel")
-memory_dynamic_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/MemoryDynamicLabel")
-object_count_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/ObjectCountLabel")
-object_resource_count_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/ObjectResourceCountLabel")
-object_node_count_label_path = NodePath("Panel/Container/HorizontalContainer/LeftContainer/ObjectNodeCountLabel")
-physics_3d_active_objects_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics3DActiveObjectsLabel")
-physics_3d_collision_pairs_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics3DCollisionPairsLabel")
-physics_3d_island_count_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics3DIslandCountLabel")
-physics_2d_active_objects_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics2DActiveObjectsLabel")
-physics_2d_collision_pairs_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics2DCollisionPairsLabel")
-physics_2d_island_count_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/Physics2DIslandCountLabel")
-usage_video_memory_total_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/UsageVideoMemoryTotalLabel")
-video_memory_used_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/VideoMemoryUsedLabel")
-texture_memory_used_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/TextureMemoryUsedLabel")
-vertex_memory_used_label_path = NodePath("Panel/Container/HorizontalContainer/RightContainer/VertexMemoryUsedLabel")
+fps_label_path = NodePath("Container/HorizontalContainer/LeftContainer/FPSLabel")
+process_label_path = NodePath("Container/HorizontalContainer/LeftContainer/ProcessLabel")
+physics_process_label_path = NodePath("Container/HorizontalContainer/LeftContainer/PhysicsProcessLabel")
+render_objects_in_frame_label_path = NodePath("Container/HorizontalContainer/LeftContainer/RenderObjectsInFrameLabel")
+render_draw_calls_in_frame_label_path = NodePath("Container/HorizontalContainer/LeftContainer/RenderDrawCallsInFrameLabel")
+render_verticies_in_frame_label_path = NodePath("Container/HorizontalContainer/LeftContainer/RenderVerticiesInFrameLabel")
+render_material_changes_in_frame_label_path = NodePath("Container/HorizontalContainer/LeftContainer/RenderMaterialChangesInFrameLabel")
+render_shader_changes_in_frame_label_path = NodePath("Container/HorizontalContainer/LeftContainer/RenderShaderChangesInFrameLabel")
+render_surface_changes_in_frame_label_path = NodePath("Container/HorizontalContainer/LeftContainer/RenderSurfaceChangesInFrameLabel")
+memory_static_label_path = NodePath("Container/HorizontalContainer/LeftContainer/MemoryStaticLabel")
+memory_dynamic_label_path = NodePath("Container/HorizontalContainer/LeftContainer/MemoryDynamicLabel")
+object_count_label_path = NodePath("Container/HorizontalContainer/LeftContainer/ObjectCountLabel")
+object_resource_count_label_path = NodePath("Container/HorizontalContainer/LeftContainer/ObjectResourceCountLabel")
+object_node_count_label_path = NodePath("Container/HorizontalContainer/LeftContainer/ObjectNodeCountLabel")
+physics_3d_active_objects_label_path = NodePath("Container/HorizontalContainer/RightContainer/Physics3DActiveObjectsLabel")
+physics_3d_collision_pairs_label_path = NodePath("Container/HorizontalContainer/RightContainer/Physics3DCollisionPairsLabel")
+physics_3d_island_count_label_path = NodePath("Container/HorizontalContainer/RightContainer/Physics3DIslandCountLabel")
+physics_2d_active_objects_label_path = NodePath("Container/HorizontalContainer/RightContainer/Physics2DActiveObjectsLabel")
+physics_2d_collision_pairs_label_path = NodePath("Container/HorizontalContainer/RightContainer/Physics2DCollisionPairsLabel")
+physics_2d_island_count_label_path = NodePath("Container/HorizontalContainer/RightContainer/Physics2DIslandCountLabel")
+usage_video_memory_total_label_path = NodePath("Container/HorizontalContainer/RightContainer/UsageVideoMemoryTotalLabel")
+video_memory_used_label_path = NodePath("Container/HorizontalContainer/RightContainer/VideoMemoryUsedLabel")
+texture_memory_used_label_path = NodePath("Container/HorizontalContainer/RightContainer/TextureMemoryUsedLabel")
+vertex_memory_used_label_path = NodePath("Container/HorizontalContainer/RightContainer/VertexMemoryUsedLabel")
 
-[node name="Panel" type="Panel" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 480.0
-margin_bottom = 278.0
-custom_styles/panel = SubResource( 1 )
-
-[node name="Container" type="PanelContainer" parent="Panel"]
+[node name="Container" type="PanelContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -1000.0
+margin_bottom = -290.0
 mouse_filter = 1
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HorizontalContainer" type="HBoxContainer" parent="Panel/Container"]
-margin_right = 450.0
-margin_bottom = 248.0
+[node name="HorizontalContainer" type="HBoxContainer" parent="Container"]
+margin_right = 4.0
+margin_bottom = 290.0
 custom_constants/separation = 0
 
-[node name="LeftContainer" type="VBoxContainer" parent="Panel/Container/HorizontalContainer"]
-margin_right = 223.0
-margin_bottom = 248.0
+[node name="LeftContainer" type="VBoxContainer" parent="Container/HorizontalContainer"]
+margin_bottom = 290.0
 size_flags_horizontal = 3
 
-[node name="FPSLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_right = 223.0
-margin_bottom = 14.0
+[node name="FPSLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_bottom = 17.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="ProcessLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 18.0
-margin_right = 223.0
-margin_bottom = 32.0
+[node name="ProcessLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 21.0
+margin_bottom = 38.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="PhysicsProcessLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 36.0
-margin_right = 223.0
-margin_bottom = 50.0
+[node name="PhysicsProcessLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 42.0
+margin_bottom = 59.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="RenderObjectsInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 54.0
-margin_right = 223.0
-margin_bottom = 68.0
+[node name="RenderObjectsInFrameLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 63.0
+margin_bottom = 80.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="RenderDrawCallsInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 72.0
-margin_right = 223.0
-margin_bottom = 86.0
+[node name="RenderDrawCallsInFrameLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 84.0
+margin_bottom = 101.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="RenderVerticiesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 90.0
-margin_right = 223.0
-margin_bottom = 104.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-
-[node name="RenderMaterialChangesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 108.0
-margin_right = 223.0
+[node name="RenderVerticiesInFrameLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 105.0
 margin_bottom = 122.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="RenderShaderChangesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
+[node name="RenderMaterialChangesInFrameLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
 margin_top = 126.0
-margin_right = 223.0
-margin_bottom = 140.0
+margin_bottom = 143.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="RenderSurfaceChangesInFrameLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 144.0
-margin_right = 223.0
-margin_bottom = 158.0
+[node name="RenderShaderChangesInFrameLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 147.0
+margin_bottom = 164.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="MemoryStaticLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 162.0
-margin_right = 223.0
-margin_bottom = 176.0
+[node name="RenderSurfaceChangesInFrameLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 168.0
+margin_bottom = 185.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="MemoryDynamicLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 180.0
-margin_right = 223.0
-margin_bottom = 194.0
+[node name="MemoryStaticLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 189.0
+margin_bottom = 206.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="ObjectCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 198.0
-margin_right = 223.0
-margin_bottom = 212.0
+[node name="MemoryDynamicLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 210.0
+margin_bottom = 227.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="ObjectResourceCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 216.0
-margin_right = 223.0
-margin_bottom = 230.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-
-[node name="ObjectNodeCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/LeftContainer"]
-margin_top = 234.0
-margin_right = 223.0
+[node name="ObjectCountLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 231.0
 margin_bottom = 248.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="VSeparator" type="VSeparator" parent="Panel/Container/HorizontalContainer"]
-margin_left = 223.0
-margin_right = 227.0
-margin_bottom = 248.0
+[node name="ObjectResourceCountLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 252.0
+margin_bottom = 269.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="RightContainer" type="VBoxContainer" parent="Panel/Container/HorizontalContainer"]
-margin_left = 227.0
-margin_right = 450.0
-margin_bottom = 248.0
+[node name="ObjectNodeCountLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
+margin_top = 273.0
+margin_bottom = 290.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="VSeparator" type="VSeparator" parent="Container/HorizontalContainer"]
+margin_right = 4.0
+margin_bottom = 290.0
+
+[node name="RightContainer" type="VBoxContainer" parent="Container/HorizontalContainer"]
+margin_left = 4.0
+margin_right = 4.0
+margin_bottom = 290.0
 size_flags_horizontal = 3
 
-[node name="Physics3DActiveObjectsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
-margin_right = 223.0
-margin_bottom = 14.0
+[node name="Physics3DActiveObjectsLabel" type="Label" parent="Container/HorizontalContainer/RightContainer"]
+margin_bottom = 17.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="Physics3DCollisionPairsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
-margin_top = 18.0
-margin_right = 223.0
-margin_bottom = 32.0
+[node name="Physics3DCollisionPairsLabel" type="Label" parent="Container/HorizontalContainer/RightContainer"]
+margin_top = 21.0
+margin_bottom = 38.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="Physics3DIslandCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
-margin_top = 36.0
-margin_right = 223.0
-margin_bottom = 50.0
+[node name="Physics3DIslandCountLabel" type="Label" parent="Container/HorizontalContainer/RightContainer"]
+margin_top = 42.0
+margin_bottom = 59.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="Physics2DActiveObjectsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
-margin_top = 54.0
-margin_right = 223.0
-margin_bottom = 68.0
+[node name="Physics2DActiveObjectsLabel" type="Label" parent="Container/HorizontalContainer/RightContainer"]
+margin_top = 63.0
+margin_bottom = 80.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="Physics2DCollisionPairsLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
-margin_top = 72.0
-margin_right = 223.0
-margin_bottom = 86.0
+[node name="Physics2DCollisionPairsLabel" type="Label" parent="Container/HorizontalContainer/RightContainer"]
+margin_top = 84.0
+margin_bottom = 101.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="Physics2DIslandCountLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
-margin_top = 90.0
-margin_right = 223.0
-margin_bottom = 104.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-
-[node name="UsageVideoMemoryTotalLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
-margin_top = 108.0
-margin_right = 223.0
+[node name="Physics2DIslandCountLabel" type="Label" parent="Container/HorizontalContainer/RightContainer"]
+margin_top = 105.0
 margin_bottom = 122.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="VideoMemoryUsedLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
+[node name="UsageVideoMemoryTotalLabel" type="Label" parent="Container/HorizontalContainer/RightContainer"]
 margin_top = 126.0
-margin_right = 223.0
-margin_bottom = 140.0
+margin_bottom = 143.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="TextureMemoryUsedLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
-margin_top = 144.0
-margin_right = 223.0
-margin_bottom = 158.0
+[node name="VideoMemoryUsedLabel" type="Label" parent="Container/HorizontalContainer/RightContainer"]
+margin_top = 147.0
+margin_bottom = 164.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 
-[node name="VertexMemoryUsedLabel" type="Label" parent="Panel/Container/HorizontalContainer/RightContainer"]
-margin_top = 162.0
-margin_right = 223.0
-margin_bottom = 176.0
+[node name="TextureMemoryUsedLabel" type="Label" parent="Container/HorizontalContainer/RightContainer"]
+margin_top = 168.0
+margin_bottom = 185.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="VertexMemoryUsedLabel" type="Label" parent="Container/HorizontalContainer/RightContainer"]
+margin_top = 189.0
+margin_bottom = 206.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
