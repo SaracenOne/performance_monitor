@@ -15,6 +15,7 @@ __meta__ = {
 "__editor_plugin_screen__": "2D",
 "_edit_use_anchors_": false
 }
+update_timer_path = NodePath("Timer")
 fps_label_path = NodePath("Container/HorizontalContainer/LeftContainer/FPSLabel")
 process_label_path = NodePath("Container/HorizontalContainer/LeftContainer/ProcessLabel")
 physics_process_label_path = NodePath("Container/HorizontalContainer/LeftContainer/PhysicsProcessLabel")
@@ -47,7 +48,7 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = -1000.0
 margin_bottom = -290.0
-mouse_filter = 1
+mouse_filter = 2
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -56,10 +57,12 @@ __meta__ = {
 [node name="HorizontalContainer" type="HBoxContainer" parent="Container"]
 margin_right = 4.0
 margin_bottom = 290.0
+mouse_filter = 2
 custom_constants/separation = 0
 
 [node name="LeftContainer" type="VBoxContainer" parent="Container/HorizontalContainer"]
 margin_bottom = 290.0
+mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="FPSLabel" type="Label" parent="Container/HorizontalContainer/LeftContainer"]
@@ -134,11 +137,13 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 [node name="VSeparator" type="VSeparator" parent="Container/HorizontalContainer"]
 margin_right = 4.0
 margin_bottom = 290.0
+mouse_filter = 2
 
 [node name="RightContainer" type="VBoxContainer" parent="Container/HorizontalContainer"]
 margin_left = 4.0
 margin_right = 4.0
 margin_bottom = 290.0
+mouse_filter = 2
 size_flags_horizontal = 3
 
 [node name="Physics3DActiveObjectsLabel" type="Label" parent="Container/HorizontalContainer/RightContainer"]
@@ -189,3 +194,6 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 margin_top = 189.0
 margin_bottom = 206.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
