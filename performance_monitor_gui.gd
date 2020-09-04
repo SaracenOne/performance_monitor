@@ -224,13 +224,14 @@ func update_labels() -> void:
 	)
 
 
-func show_performance_monitor(p_bool):
-	if ! Engine.is_editor_hint():
-		set_process(p_bool)
-		if p_bool == true:
-			show()
-		else:
-			hide()
+func show_performance_monitor(p_should_show) -> void:
+	should_show_performance_monitor = p_should_show
+	
+	if ! Engine.is_editor_hint() and should_show_performance_monitor:
+		show()
+		_on_Timer_timeout()
+	else:
+		hide()
 
 func _update_nodes() -> void:
 	# Left
@@ -318,25 +319,19 @@ func _update_project_settings() -> void:
 			performance_label_update_rate = ProjectSettings.get_setting(
 				"debug/settings/performance/performance_label_update_rate"
 			)
-	else:
-		ProjectSettings.set_setting(
-			"debug/settings/performance/performance_label_update_rate",
-			performance_label_update_rate
-		)
 
 	if ProjectSettings.has_setting("debug/settings/performance/show_performance_monitor"):
 		should_show_performance_monitor = ProjectSettings.get_setting(
 			"debug/settings/performance/show_performance_monitor"
 		)
-	else:
-		ProjectSettings.set_setting(
-			"debug/settings/performance/show_performance_monitor",
-			should_show_performance_monitor
-		)
+		
+	if Engine.is_editor_hint():
+		ProjectSettings.save()
 
 func _on_Timer_timeout() -> void:
-	update_labels()
-	update_timer.start(performance_label_update_rate)
+	if is_visible_in_tree():
+		update_labels()
+		update_timer.start(performance_label_update_rate)
 
 func _ready():
 	if ! Engine.is_editor_hint():
@@ -347,6 +342,4 @@ func _ready():
 		_update_project_settings()
 
 		show_performance_monitor(should_show_performance_monitor)
-		if should_show_performance_monitor:
-			_on_Timer_timeout()
 
